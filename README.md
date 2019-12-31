@@ -199,7 +199,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"gitlab.wgdp.io/cmdb/gosura"
+	"github.com/wgnet/gosura"
 )
 
 func insertQuery() gosura.Query {
