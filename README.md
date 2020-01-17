@@ -10,9 +10,13 @@ Go client for the Hasura API.
         - [Schema/Metadata API](#schemametadata-api)
         - [PG Dump API](#pg-dump-api)
         - [Config API](#config-api)
+    - [Installation](#installation)
     - [Usage](#usage)
         - [Simple query](#simple-query)
         - [Permissions DSL](#permissions-dsl)
+        - [Bulk queries](#bulk-queries)
+    - [Changelog](#changelog)
+    - [Contributing](#contributing)
 
 <!-- markdown-toc end -->
 
@@ -60,10 +64,10 @@ Go client for the Hasura API.
 - [x] Query Collections
   - [x] create\_query\_collection
   - [x] drop\_query\_collection
-  - [x] add\_query\_to_collection
-  - [x] drop\_query\_from_collection
-  - [x] add\_collection\_to_allowlist
-  - [x] drop\_collection\_from_allowlist
+  - [x] add\_query\_to\_collection
+  - [x] drop\_query\_from\_collection
+  - [x] add\_collection\_to\_allowlist
+  - [x] drop\_collection\_from\_allowlist
 - [x] Manage Metadata
   - [x] export\_metadata
   - [x] replace\_metadata
@@ -79,6 +83,12 @@ Go client for the Hasura API.
 ### Config API
 
 - [x] config
+
+## Installation
+
+```sh
+go get github.com/wgnet/gosura
+```
 
 ## Usage
 
@@ -306,3 +316,11 @@ if err != nil {
 }
 fmt.Printf("%+v\n", data)
 ```
+
+## Changelog
+
+See [CHANGELOG](CHANGELOG.md).
+
+## Contributing
+
+See [CONTRIB](CONTRIB.md).
