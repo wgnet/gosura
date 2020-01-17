@@ -87,7 +87,7 @@ Go client for the Hasura API.
 ## Installation
 
 ```sh
-go get github.com/wgnet/gosura
+go get github.com/wgnet/gosura/gosura
 ```
 
 ## Usage
@@ -130,7 +130,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/wgnet/gosura"
+	"github.com/wgnet/gosura/gosura"
 )
 
 func main() {
@@ -209,7 +209,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/wgnet/gosura"
+	"github.com/wgnet/gosura/gosura"
 )
 
 func insertQuery() gosura.Query {
