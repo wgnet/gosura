@@ -1,20 +1,22 @@
-# Contribution guide
+# Guidance on how to contribute
 
-## Purporses of commit
+There are two primary ways to help:
 
-1. Your commit should provide some improvement for widely-used systems.
-2. Any bugfix is ok
+* Using the issue tracker, and
+* Changing the code-base.
 
-## Code of conduct
+## Using the issue tracker
 
-1. Be tolerant to other's failure. Nobody is perfect. Me too.
-2. Don't blame anyone. Nor in commit message nor in comments or code itself.
-3. No PoC - no merge. Prepare yourself for questions.
-4. Don't hesitate ask those questions too.
+Use the issue tracker to suggest feature requests, report bugs, and ask questions. This is also a great way to connect with the developers of the project as well as others who are interested in this solution.
+
+Use the issue tracker to find ways to contribute. Find a bug or a feature, mention in the issue that you will take on that effort, then follow the Changing the code-base guidance below.
+
+## Changing the code-base
+
+Generally speaking, you should fork this repository, make changes in your own fork, and then submit a pull-request. All new code should have associated unit tests that validate implemented features and the presence or lack of defects. Additionally, the code should follow any stylistic and architectural guidelines prescribed by the project. In the absence of such guidelines, mimic the styles and patterns in the existing code-base.
 
 ## Coding style
 
 1. Use camelCase naming style.
 2. Don't make methods & variables visible unless it's highly necessary.
-3. Avoid using 3pc libraries for generic functions (collections, string parsing, etc).
-We don't want to become a hostages of those libraries once.
+3. Avoid using 3pc libraries for generic functions (collections, string parsing, etc). We don't want to become a hostages of those libraries once.

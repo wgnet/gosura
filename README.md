@@ -92,7 +92,7 @@ go get github.com/wgnet/gosura/gosura
 
 ## Usage
 
-### Simple query
+### Single query
 
 ```go
 client := NewHasuraClient().
