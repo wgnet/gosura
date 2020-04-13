@@ -8,13 +8,15 @@ Go client for the Hasura API.
 - [Gosura](#gosura)
     - [Implemented query types](#implemented-query-types)
         - [Schema/Metadata API](#schemametadata-api)
+        - [Data API](#data-api)
         - [PG Dump API](#pg-dump-api)
         - [Config API](#config-api)
     - [Installation](#installation)
     - [Usage](#usage)
-        - [Simple query](#simple-query)
+        - [Single query](#single-query)
         - [Permissions DSL](#permissions-dsl)
         - [Bulk queries](#bulk-queries)
+        - [Data API](#data-api-1)
     - [Changelog](#changelog)
     - [Contributing](#contributing)
 
@@ -65,8 +67,7 @@ Go client for the Hasura API.
   - [x] create\_query\_collection
   - [x] drop\_query\_collection
   - [x] add\_query\_to\_collection
-  - [x] drop\_query\_from\_collection
-  - [x] add\_collection\_to\_allowlist
+    - [x] add\_collection\_to\_allowlist
   - [x] drop\_collection\_from\_allowlist
 - [x] Manage Metadata
   - [x] export\_metadata
@@ -75,6 +76,13 @@ Go client for the Hasura API.
   - [x] clear\_metadata
   - [x] get\_inconsistent\_metadata
   - [x] drop\_inconsistent\_metadata
+
+### Data API
+
+- [x] select
+- [ ] insert
+- [ ] update
+- [ ] delete
 
 ### PG Dump API
 
@@ -316,6 +324,51 @@ if err != nil {
 }
 fmt.Printf("%+v\n", data)
 ```
+
+### Data API
+
+Get the Hasura permissions just for example:
+
+```go
+query := gosura.NewSelectQuery()
+
+tableColumn := gosura.NewSelectColumn("table_name")
+permsColumn := gosura.NewSelectColumn("permissions")
+permsColumn.AddColumn("*", nil)
+
+args := gosura.SelectArgs{
+	Table: gosura.TableArgs{
+		Name:   "hdb_table",
+		Schema: "hdb_catalog",
+	},
+	Columns: []*gosura.SelectColumn{tableColumn, permsColumn},
+}
+query.SetArgs(args)
+```
+
+And a query JSON is
+```json
+{
+  "type": "select",
+  "args": {
+    "table": {
+      "schema": "hdb_catalog",
+      "name": "hdb_table"
+    },
+    "columns": [
+      "hdb_table",
+      {
+        "columns": [
+          "*"
+        ],
+        "name": "permissions"
+      }
+    ]
+  }
+}
+```
+
+Run this query with `client.Do(query)`
 
 ## Changelog
 
